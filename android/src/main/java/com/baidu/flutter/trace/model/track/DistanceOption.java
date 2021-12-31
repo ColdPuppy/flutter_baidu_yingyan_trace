@@ -253,7 +253,7 @@ public final class DistanceOption extends BaseOption {
         DistanceRequest distanceRequest = new DistanceRequest();
         distanceRequest.setTag(tag);
         distanceRequest.setServiceId(serviceId);
-        distanceRequest.setServiceId(serviceId);
+        distanceRequest.setEntityName(entityName);
         distanceRequest.setStartTime(startTime);
         distanceRequest.setEndTime(endTime);
         distanceRequest.setProcessed(isProcessed);
