@@ -1,9 +1,9 @@
 package com.baidu.flutter.trace.model.fence;
 
+import com.baidu.flutter.trace.model.BaseResult;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.baidu.flutter.trace.model.BaseResult;
 
 /**
  * 查询监控对象状态响应结果

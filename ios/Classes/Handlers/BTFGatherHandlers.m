@@ -75,7 +75,7 @@ static BTFGatherHandlers *_instance = nil;
     } else if ([call.method isEqualToString:kSetInterval]) { // 设置采集周期和打包上传的周期
         int gatherInterval = [[call.arguments btf_safeObjectForKey:@"gatherInterval"] intValue];
         int packInterval = [[call.arguments btf_safeObjectForKey:@"packInterval"] intValue];
-        // [2,300]
+        // 【2,300】
         [[BTKAction sharedInstance] changeGatherAndPackIntervals:gatherInterval packInterval:packInterval delegate:self];
         result(@YES);
     } else if ([call.method isEqualToString:kSetCacheSize]) { // 设置SDK缓存所占磁盘空间的最大值。单位：MB。

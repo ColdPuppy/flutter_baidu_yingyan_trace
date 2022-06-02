@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.fence;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.baidu.flutter.trace.model.BaseOption;
 import com.baidu.trace.api.fence.DeleteFenceRequest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 删除围栏请求

@@ -1,9 +1,9 @@
 package com.baidu.flutter.trace.model.fence;
 
-import java.util.List;
-
 import com.baidu.flutter.trace.model.BaseOption;
 import com.baidu.trace.api.fence.AddMonitoredPersonRequest;
+
+import java.util.List;
 
 /**
  * 增加围栏需监控的entity

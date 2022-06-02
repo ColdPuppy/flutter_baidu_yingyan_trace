@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.fence;
 
-import java.util.List;
-
 import com.baidu.flutter.trace.model.BaseOption;
 import com.baidu.trace.api.fence.HistoryAlarmRequest;
 import com.baidu.trace.model.CoordType;
+
+import java.util.List;
 
 /**
  * 查询围栏历史报警请求参数

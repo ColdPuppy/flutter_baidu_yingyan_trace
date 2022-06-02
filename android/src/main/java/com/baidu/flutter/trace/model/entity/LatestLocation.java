@@ -1,8 +1,8 @@
 package com.baidu.flutter.trace.model.entity;
 
-import java.util.Map;
-
 import com.baidu.flutter.trace.model.Point;
+
+import java.util.Map;
 
 /**
  * 最新轨迹点信息

@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.baidu.flutter.trace.model.BaseOption;
 import com.baidu.trace.api.entity.AddEntityRequest;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 创建Entity请求参数

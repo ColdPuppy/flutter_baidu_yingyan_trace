@@ -1,4 +1,5 @@
 package com.baidu.flutter.trace.model.analysis;
+
 import java.util.ArrayList;
 import java.util.List;
 

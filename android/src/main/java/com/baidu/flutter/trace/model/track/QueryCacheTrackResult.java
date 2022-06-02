@@ -1,9 +1,9 @@
 package com.baidu.flutter.trace.model.track;
 
+import com.baidu.flutter.trace.model.BaseResult;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.baidu.flutter.trace.model.BaseResult;
 
 /**
  * 查询缓存轨迹响应结果

@@ -18,7 +18,7 @@ A new Flutter plugin.
   s.dependency 'Flutter'
   s.platform = :ios, '8.0'
   # s.dependency 'BaiduTraceKit', '3.1.3'
-  s.dependency 'BaiduTraceKit-Lite', '3.1.3'
+  s.dependency 'BaiduTraceKit-Lite', '3.1.5'
   s.static_framework = false
 
   # Flutter.framework does not contain a i386 slice.

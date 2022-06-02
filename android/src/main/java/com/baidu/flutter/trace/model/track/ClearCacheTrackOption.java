@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.track;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.baidu.flutter.trace.model.BaseOption;
 import com.baidu.trace.api.track.ClearCacheTrackRequest;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 清理缓存轨迹请求

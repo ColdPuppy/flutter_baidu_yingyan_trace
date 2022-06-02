@@ -1,5 +1,6 @@
 package com.baidu.flutter.trace.manager;
 
+
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 

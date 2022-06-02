@@ -1,5 +1,4 @@
 package com.baidu.flutter.trace.manager;
-import java.util.Map;
 
 import com.baidu.flutter.trace.Constant;
 import com.baidu.flutter.trace.model.fence.AddMonitoredPersonOption;
@@ -45,6 +44,8 @@ import com.baidu.trace.api.fence.MonitoredStatusResponse;
 import com.baidu.trace.api.fence.OnFenceListener;
 import com.baidu.trace.api.fence.UpdateFenceRequest;
 import com.baidu.trace.api.fence.UpdateFenceResponse;
+
+import java.util.Map;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

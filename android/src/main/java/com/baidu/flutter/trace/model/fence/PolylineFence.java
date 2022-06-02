@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.fence;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.baidu.flutter.trace.model.CoordType;
 import com.baidu.flutter.trace.model.LatLng;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 多段线围栏
@@ -128,10 +128,10 @@ public final class PolylineFence extends Fence {
         if (polylineFence == null) {
             return null;
         }
-        List<com.baidu.flutter.trace.model.LatLng> latLngs = new ArrayList<>();
+        List<LatLng> latLngs = new ArrayList<>();
         if (polylineFence.getVertexes() != null) {
             for (com.baidu.trace.model.LatLng latLng : polylineFence.getVertexes()) {
-                latLngs.add(com.baidu.flutter.trace.model.LatLng.fromSDKObject(latLng));
+                latLngs.add(LatLng.fromSDKObject(latLng));
             }
         }
         return new PolylineFence(polylineFence.getFenceId(),

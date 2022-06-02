@@ -252,8 +252,8 @@ public final class DistanceOption extends BaseOption {
     public DistanceRequest toDistanceRequest() {
         DistanceRequest distanceRequest = new DistanceRequest();
         distanceRequest.setTag(tag);
-        distanceRequest.setServiceId(serviceId);
         distanceRequest.setEntityName(entityName);
+        distanceRequest.setServiceId(serviceId);
         distanceRequest.setStartTime(startTime);
         distanceRequest.setEndTime(endTime);
         distanceRequest.setProcessed(isProcessed);
@@ -270,7 +270,7 @@ public final class DistanceOption extends BaseOption {
                 + entityName
                 + ", startTime=" + startTime + ", endTime=" + endTime + ", isProcessed="
                 + isProcessed
-                + ", processOption=" + processOption + ", supplementMode=" + supplementMode
+                + ", processOption=" + processOption.toString() + ", supplementMode=" + supplementMode
                 + ", lowSpeedThreshold=" + lowSpeedThreshold + "]";
     }
 

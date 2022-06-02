@@ -1,16 +1,16 @@
 import 'package:flutter_baidu_yingyan_trace/src/callback/fence_callback.dart';
 import 'package:flutter_baidu_yingyan_trace/src/interface/fence_interface.dart';
 import 'package:flutter_baidu_yingyan_trace/src/manager/base_manager.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/update_fence_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_by_location_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_list_monitored_person_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_history_alarm_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_fence_list_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_monitored_person_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_fence_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/create_fence_option.dart';
 import 'package:flutter_baidu_yingyan_trace/src/model/fence/add_monitored_person_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/create_fence_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_fence_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_monitored_person_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_fence_list_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_history_alarm_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_list_monitored_person_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_by_location_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_option.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/update_fence_option.dart';
 
 class FenceManager extends BaseManager implements FenceInterface {
   static final FenceManager _instance = FenceManager._internal();

@@ -1,5 +1,4 @@
 package com.baidu.flutter.trace.manager;
-import java.util.Map;
 
 import com.baidu.flutter.trace.Constant;
 import com.baidu.flutter.trace.model.entity.AddEntityOption;
@@ -45,6 +44,8 @@ import com.baidu.trace.api.entity.SearchResponse;
 import com.baidu.trace.api.entity.UpdateEntityRequest;
 import com.baidu.trace.api.entity.UpdateEntityResponse;
 import com.baidu.trace.model.TraceLocation;
+
+import java.util.Map;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

@@ -1,9 +1,9 @@
 package com.baidu.flutter.trace.model.entity;
 
+import com.baidu.flutter.trace.model.BaseResult;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import com.baidu.flutter.trace.model.BaseResult;
 
 /**
  * entity搜索接口通用响应结果

@@ -1,8 +1,8 @@
 package com.baidu.flutter.trace.model.fence;
 
-import java.util.List;
-
 import com.baidu.flutter.trace.model.BaseResult;
+
+import java.util.List;
 
 /**
  * 更新围栏响应结果

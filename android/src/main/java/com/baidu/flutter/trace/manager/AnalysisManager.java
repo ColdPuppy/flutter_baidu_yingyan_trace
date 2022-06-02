@@ -1,14 +1,10 @@
 package com.baidu.flutter.trace.manager;
 
-import java.util.Map;
-
 import com.baidu.flutter.trace.Constant;
 import com.baidu.flutter.trace.model.analysis.DrivingBehaviorOption;
 import com.baidu.flutter.trace.model.analysis.DrivingBehaviorResult;
 import com.baidu.flutter.trace.model.analysis.StayPointOption;
 import com.baidu.flutter.trace.model.analysis.StayPointResult;
-import com.baidu.flutter.trace.model.entity.BoundSearchOption;
-import com.baidu.flutter.trace.model.entity.PolygonSearchResult;
 import com.baidu.flutter.trace.utils.BLog;
 import com.baidu.flutter.trace.utils.DataConvertUtil;
 import com.baidu.trace.api.analysis.DrivingBehaviorRequest;
@@ -16,8 +12,8 @@ import com.baidu.trace.api.analysis.DrivingBehaviorResponse;
 import com.baidu.trace.api.analysis.OnAnalysisListener;
 import com.baidu.trace.api.analysis.StayPointRequest;
 import com.baidu.trace.api.analysis.StayPointResponse;
-import com.baidu.trace.api.entity.BoundSearchRequest;
-import com.baidu.trace.api.entity.OnEntityListener;
+
+import java.util.Map;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

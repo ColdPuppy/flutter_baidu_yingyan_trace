@@ -1,6 +1,4 @@
 package com.baidu.flutter.trace.manager;
-import java.util.HashMap;
-import java.util.Map;
 
 import com.baidu.flutter.trace.Constant;
 import com.baidu.flutter.trace.model.PushResult;
@@ -9,6 +7,9 @@ import com.baidu.flutter.trace.utils.BLog;
 import com.baidu.flutter.trace.utils.DataConvertUtil;
 import com.baidu.trace.model.OnTraceListener;
 import com.baidu.trace.model.PushMessage;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;

@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.fence;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.baidu.flutter.trace.model.CoordType;
 import com.baidu.flutter.trace.model.LatLng;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 围栏基类

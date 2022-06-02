@@ -1,9 +1,9 @@
 package com.baidu.flutter.trace.model.track;
 
-import java.util.Map;
-
 import com.baidu.flutter.trace.model.LatLng;
 import com.baidu.flutter.trace.model.Point;
+
+import java.util.Map;
 
 /**
  * 最新轨迹点

@@ -1,15 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_baidu_yingyan_trace/flutter_baidu_yingyan_trace.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/add_monitored_person_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/create_fence_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_fence_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_monitored_person_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_fence_list_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_history_alarm_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_list_monitored_person_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_by_location_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/update_fence_option.dart';
 
 /// 地理围栏业务的相关接口
 abstract class FenceInterface {

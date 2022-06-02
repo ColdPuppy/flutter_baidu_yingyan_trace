@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.track;
 
-import java.util.Map;
-
 import com.baidu.flutter.trace.model.Point;
 import com.baidu.trace.model.CoordType;
 import com.baidu.trace.model.LatLng;
+
+import java.util.Map;
 
 /**
  * 轨迹点信息

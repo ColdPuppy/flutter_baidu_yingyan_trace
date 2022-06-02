@@ -63,38 +63,16 @@ class TraceController {
 
   static TraceController _getInstance() {
     if (baiduYingYanMethodChannel.streamController.isClosed) {
-      baiduYingYanMethodChannel.streamController = StreamController<BaseEvent>.broadcast();
+      baiduYingYanMethodChannel.streamController =
+          StreamController<BaseEvent>.broadcast();
     }
     return _instance;
   }
+}
 
+///  ********************* 轨迹服务与采集的相关接口 *********************
+extension TraceExtension on TraceController {
   static TraceManager get _traceManager => TraceManager();
-
-  static EntityManager get _entityManager => EntityManager();
-
-  static FenceManager get _fenceManager => FenceManager();
-
-  static AnalysisManager get _analysisManager => AnalysisManager();
-
-  static TrackManager get _trackManager => TrackManager();
-
-  static LocationManager get _locationManager => LocationManager();
-
-  ///  ********************* 定位相关接口 *********************
-
-  /// 申请鹰眼SDK定位权限（iOS）适配iOS14
-  Future<bool> requestLocalPermission() async {
-    return await _locationManager.requestLocalPermission();
-  }
-
-  /// 配置定位参数（iOS）
-  /// locationOption 定位参数
-  Future<bool> configLocationInfo(LocationOption locationOption) async {
-    return await _locationManager.configLocationInfo(
-        locationOption: locationOption);
-  }
-
-  ///  ********************* 轨迹服务与采集的相关接口 *********************
 
   /// 设置SDK运行所需的基础信息，调用任何方法之前都需要先调用此方法
   /// true代表设置成功，false代表设置失败
@@ -134,7 +112,7 @@ class TraceController {
   }
 
   /// 设置采集周期和打包上传的周期
-  /// 采集周期和上传周期的值域均为[2,300]，且上传周期必须是采集周期的整数倍
+  /// 采集周期和上传周期的值域均为【2,300】，且上传周期必须是采集周期的整数倍
   /// gatherInterval 采集周期，单位：秒
   /// packInterval 打包上传周期，单位：秒
   /// traceCallback  设置采集周期和打包上传的周期回调, SetIntervalCallback类型
@@ -159,6 +137,104 @@ class TraceController {
     return await _traceManager.setCacheSize(
         size: size, traceCallback: traceCallback);
   }
+
+  /// 释放资源
+  ///
+  /// 注意：为保证sdk正常运行，请只在以下两种情况下调用该方法：
+  /// 1、app退出时；2、不再使用SDK中的任何功能，且再次使用时，会重新初始化LBSTraceClient
+  Future<void> release() async {
+    return await _traceManager.release();
+  }
+}
+
+///  ********************* 轨迹接口 *********************
+extension TrackExtension on TraceController {
+  static TrackManager get _trackManager => TrackManager();
+
+  /// 上传某个开发者自定义的轨迹点
+  /// 除了SDK自动的轨迹采集上传外，开发者可以通过此方法上传自定义的轨迹点。
+  /// 比如在两个采集周期之间，上传某个轨迹点作为补充。或者上传非当前登陆的entity的其他终端的轨迹点等。
+  /// addCustomTrackPointOption
+  /// trackCallBack
+  Future<bool> addCustomPoint(
+      {required AddCustomTrackPointOption addCustomTrackPointOption,
+      TrackCallBack? trackCallBack}) async {
+    return await _trackManager.addCustomPoint(
+        addCustomTrackPointOption: addCustomTrackPointOption,
+        trackCallBack: trackCallBack);
+  }
+
+  /// 批量上传若干个开发者自定义的轨迹点
+  /// 除了SDK自动的轨迹采集上传外，开发者可以通过此方法批量上传自定义的轨迹点。
+  /// 这些轨迹点可以属于不同的终端实体。
+  /// addCustomTrackPointsOption
+  /// trackCallBack
+  Future<bool> AddCustomPoints(
+      {required AddCustomTrackPointsOption addCustomTrackPointsOption,
+      TrackCallBack? trackCallBack}) async {
+    return await _trackManager.addCustomPoints(
+        addCustomTrackPointsOption: addCustomTrackPointsOption,
+        trackCallBack: trackCallBack);
+  }
+
+  /// 清空客户端缓存的轨迹信息
+  /// clearTrackCacheOption
+  /// trackCallBack
+  Future<bool> clearTrackCache(
+      {required ClearTrackCacheOption clearTrackCacheOption,
+      TrackCallBack? trackCallBack}) async {
+    return await _trackManager.clearTrackCache(
+        clearTrackCacheOption: clearTrackCacheOption,
+        trackCallBack: trackCallBack);
+  }
+
+  /// 查询某终端实体在一段时间内的轨迹
+  /// queryHistoryTrackOption
+  /// trackCallBack
+  Future<bool> queryHistoryTrack(
+      {required QueryHistoryTrackOption queryHistoryTrackOption,
+      TrackCallBack? trackCallBack}) async {
+    return await _trackManager.queryHistoryTrack(
+        queryHistoryTrackOption: queryHistoryTrackOption,
+        trackCallBack: trackCallBack);
+  }
+
+  /// 查询客户端缓存的轨迹信息
+  /// queryTrackCacheInfoOption
+  /// trackCallBack
+  Future<bool> queryTrackCacheInfo(
+      {required QueryTrackCacheInfoOption queryTrackCacheInfoOption,
+      TrackCallBack? trackCallBack}) async {
+    return await _trackManager.queryTrackCacheInfo(
+        queryTrackCacheInfoOption: queryTrackCacheInfoOption,
+        trackCallBack: trackCallBack);
+  }
+
+  /// 查询某终端实体在一段时间内的里程
+  /// queryTrackDistanceOption
+  /// trackCallBack
+  Future<bool> queryTrackDistance(
+      {required QueryTrackDistanceOption queryTrackDistanceOption,
+      TrackCallBack? trackCallBack}) async {
+    return await _trackManager.queryTrackDistance(
+        queryTrackDistanceOption: queryTrackDistanceOption,
+        trackCallBack: trackCallBack);
+  }
+
+  ///  查询某终端实体的实时位置
+  /// queryTrackLatestPointOption
+  /// trackCallBack
+  Future<bool> queryTrackLatestPoint(
+      {required QueryTrackLatestPointOption queryTrackLatestPointOption,
+      TrackCallBack? trackCallBack}) async {
+    return await _trackManager.queryTrackLatestPoint(
+        queryTrackLatestPointOption: queryTrackLatestPointOption,
+        trackCallBack: trackCallBack);
+  }
+}
+
+extension EntityExtension on TraceController {
+  static EntityManager get _entityManager => EntityManager();
 
   /// 添加Entity
   /// 使用要点:
@@ -293,113 +369,27 @@ class TraceController {
         entityCallBack: entityCallBack);
   }
 
-  ///  ********************* 轨迹接口 *********************
-
-  /// 上传某个开发者自定义的轨迹点
-  /// 除了SDK自动的轨迹采集上传外，开发者可以通过此方法上传自定义的轨迹点。
-  /// 比如在两个采集周期之间，上传某个轨迹点作为补充。或者上传非当前登陆的entity的其他终端的轨迹点等。
-  /// addCustomTrackPointOption
-  /// trackCallBack
-  Future<bool> addCustomPoint(
-      {required AddCustomTrackPointOption addCustomTrackPointOption,
-      TrackCallBack? trackCallBack}) async {
-    return await _trackManager.addCustomPoint(
-        addCustomTrackPointOption: addCustomTrackPointOption,
-        trackCallBack: trackCallBack);
+  /// 查询当前实时位置 (Android)
+  /// realTimeLocationOption 查询实时位置配置
+  /// entityCallBack 查询实时位置回调
+  Future<bool> queryRealTimeLoc(
+      {required RealTimeLocationOption realTimeLocationOption,
+      EntityCallBack? entityCallBack}) async {
+    return await _entityManager.queryRealTimeLoc(
+        realTimeLocationOption: realTimeLocationOption,
+        entityCallBack: entityCallBack);
   }
 
-  /// 批量上传若干个开发者自定义的轨迹点
-  /// 除了SDK自动的轨迹采集上传外，开发者可以通过此方法批量上传自定义的轨迹点。
-  /// 这些轨迹点可以属于不同的终端实体。
-  /// addCustomTrackPointsOption
-  /// trackCallBack
-  Future<bool> AddCustomPoints(
-      {required AddCustomTrackPointsOption addCustomTrackPointsOption,
-      TrackCallBack? trackCallBack}) async {
-    return await _trackManager.addCustomPoints(
-        addCustomTrackPointsOption: addCustomTrackPointsOption,
-        trackCallBack: trackCallBack);
+  /// 停止实时定位
+  Future<void> stopRealTimeLoc() async {
+    return await _entityManager.stopRealTimeLoc();
   }
+}
 
-  /// 清空客户端缓存的轨迹信息
-  /// clearTrackCacheOption
-  /// trackCallBack
-  Future<bool> clearTrackCache(
-      {required ClearTrackCacheOption clearTrackCacheOption,
-      TrackCallBack? trackCallBack}) async {
-    return await _trackManager.clearTrackCache(
-        clearTrackCacheOption: clearTrackCacheOption,
-        trackCallBack: trackCallBack);
-  }
+///  ********************* 围栏相关接口 *********************
+extension FenceExtension on TraceController {
+  static FenceManager get _fenceManager => FenceManager();
 
-  /// 查询某终端实体在一段时间内的轨迹
-  /// queryHistoryTrackOption
-  /// trackCallBack
-  Future<bool> queryHistoryTrack(
-      {required QueryHistoryTrackOption queryHistoryTrackOption,
-      TrackCallBack? trackCallBack}) async {
-    return await _trackManager.queryHistoryTrack(
-        queryHistoryTrackOption: queryHistoryTrackOption,
-        trackCallBack: trackCallBack);
-  }
-
-  /// 查询客户端缓存的轨迹信息
-  /// queryTrackCacheInfoOption
-  /// trackCallBack
-  Future<bool> queryTrackCacheInfo(
-      {required QueryTrackCacheInfoOption queryTrackCacheInfoOption,
-      TrackCallBack? trackCallBack}) async {
-    return await _trackManager.queryTrackCacheInfo(
-        queryTrackCacheInfoOption: queryTrackCacheInfoOption,
-        trackCallBack: trackCallBack);
-  }
-
-  /// 查询某终端实体在一段时间内的里程
-  /// queryTrackDistanceOption
-  /// trackCallBack
-  Future<bool> queryTrackDistance(
-      {required QueryTrackDistanceOption queryTrackDistanceOption,
-      TrackCallBack? trackCallBack}) async {
-    return await _trackManager.queryTrackDistance(
-        queryTrackDistanceOption: queryTrackDistanceOption,
-        trackCallBack: trackCallBack);
-  }
-
-  ///  查询某终端实体的实时位置
-  /// queryTrackLatestPointOption
-  /// trackCallBack
-  Future<bool> queryTrackLatestPoint(
-      {required QueryTrackLatestPointOption queryTrackLatestPointOption,
-      TrackCallBack? trackCallBack}) async {
-    return await _trackManager.queryTrackLatestPoint(
-        queryTrackLatestPointOption: queryTrackLatestPointOption,
-        trackCallBack: trackCallBack);
-  }
-
-  ///  ********************* 轨迹分析相关接口 *********************
-  /// 驾驶行为分析
-  /// drivingBehaviourAnalysisOption
-  /// analysisCallBack
-  Future<bool> analyzeDrivingBehaviour(
-      {required DrivingBehaviourAnalysisOption drivingBehaviourAnalysisOption,
-      AnalysisCallBack? analysisCallBack}) async {
-    return await _analysisManager.analyzeDrivingBehaviour(
-        drivingBehaviourAnalysisOption: drivingBehaviourAnalysisOption,
-        analysisCallBack: analysisCallBack);
-  }
-
-  /// 停留点分析
-  /// stayPointAnalysisOption
-  /// analysisCallBack
-  Future<bool> analyzeStayPoint(
-      {required StayPointAnalysisOption stayPointAnalysisOption,
-      AnalysisCallBack? analysisCallBack}) async {
-    return await _analysisManager.analyzeStayPoint(
-        stayPointAnalysisOption: stayPointAnalysisOption,
-        analysisCallBack: analysisCallBack);
-  }
-
-  ///  ********************* 围栏相关接口 *********************
   /// 给服务端地理围栏添加监控对象
   /// addMonitoredPersonOption
   /// fenceCallback
@@ -508,21 +498,22 @@ class TraceController {
     return await _fenceManager.updateFence(
         updateFenceOption: updateFenceOption, fenceCallback: fenceCallback);
   }
+}
 
-  /// 查询当前实时位置 (Android)
-  /// realTimeLocationOption 查询实时位置配置
-  /// entityCallBack 查询实时位置回调
-  Future<bool> queryRealTimeLoc(
-      {required RealTimeLocationOption realTimeLocationOption,
-      EntityCallBack? entityCallBack}) async {
-    return await _entityManager.queryRealTimeLoc(
-        realTimeLocationOption: realTimeLocationOption,
-        entityCallBack: entityCallBack);
+///  ********************* 定位相关接口 *********************
+extension LocationExtension on TraceController {
+  static LocationManager get _locationManager => LocationManager();
+
+  /// 申请鹰眼SDK定位权限（iOS）适配iOS14
+  Future<bool> requestLocalPermission() async {
+    return await _locationManager.requestLocalPermission();
   }
 
-  /// 停止实时定位
-  Future<void> stopRealTimeLoc() async {
-    return await _entityManager.stopRealTimeLoc();
+  /// 配置定位参数（iOS）
+  /// locationOption 定位参数
+  Future<bool> configLocationInfo(LocationOption locationOption) async {
+    return await _locationManager.configLocationInfo(
+        locationOption: locationOption);
   }
 
   /// 设置采集定位模式 (Android)
@@ -533,12 +524,31 @@ class TraceController {
   Future<bool> setLocationMode(LocationMode locationMode) async {
     return await _locationManager.setLocationMode(locationMode);
   }
+}
 
-  /// 释放资源
-  ///
-  /// 注意：为保证sdk正常运行，请只在以下两种情况下调用该方法：
-  /// 1、app退出时；2、不再使用SDK中的任何功能，且再次使用时，会重新初始化LBSTraceClient
-  Future<void> release() async {
-    return await _traceManager.release();
+///  ********************* 轨迹分析相关接口 *********************
+extension AnalysisExtension on TraceController {
+  static AnalysisManager get _analysisManager => AnalysisManager();
+
+  /// 驾驶行为分析
+  /// drivingBehaviourAnalysisOption
+  /// analysisCallBack
+  Future<bool> analyzeDrivingBehaviour(
+      {required DrivingBehaviourAnalysisOption drivingBehaviourAnalysisOption,
+      AnalysisCallBack? analysisCallBack}) async {
+    return await _analysisManager.analyzeDrivingBehaviour(
+        drivingBehaviourAnalysisOption: drivingBehaviourAnalysisOption,
+        analysisCallBack: analysisCallBack);
+  }
+
+  /// 停留点分析
+  /// stayPointAnalysisOption
+  /// analysisCallBack
+  Future<bool> analyzeStayPoint(
+      {required StayPointAnalysisOption stayPointAnalysisOption,
+      AnalysisCallBack? analysisCallBack}) async {
+    return await _analysisManager.analyzeStayPoint(
+        stayPointAnalysisOption: stayPointAnalysisOption,
+        analysisCallBack: analysisCallBack);
   }
 }

@@ -35,7 +35,7 @@ public final class QueryCacheTrackOption extends BaseOption {
      * 针对GPS点，建议值设置为20
      * </p>
      */
-    private short radiusThreshold = 0;
+    private int radiusThreshold = 0;
 
     /**
      * 查询缓存轨迹点距离时指定的起始时间
@@ -100,7 +100,7 @@ public final class QueryCacheTrackOption extends BaseOption {
      *
      * @return 定位点去噪精度
      */
-    public short getRadiusThreshold() {
+    public int getRadiusThreshold() {
         return radiusThreshold;
     }
 
@@ -114,7 +114,7 @@ public final class QueryCacheTrackOption extends BaseOption {
      *
      * @param radiusThreshold 定位点去噪精度，默认值为0
      */
-    public void setRadiusThreshold(short radiusThreshold) {
+    public void setRadiusThreshold(int radiusThreshold) {
         this.radiusThreshold = radiusThreshold;
     }
 
@@ -198,7 +198,7 @@ public final class QueryCacheTrackOption extends BaseOption {
 
     /**
      * 不指定时间段查询缓存轨迹距离
-     * V3.1.0舍弃该接口，请使用{@link #QueryCacheTrackOption(int, long, String, boolean, short, long, long)}
+     * V3.1.0舍弃该接口，请使用{@link #QueryCacheTrackOption(int, long, String, boolean, int, long, long)}
      *
      * @param tag                  请求标识
      * @param serviceId            轨迹服务ID
@@ -210,7 +210,7 @@ public final class QueryCacheTrackOption extends BaseOption {
      */
     @Deprecated
     public QueryCacheTrackOption(int tag, long serviceId, String entityName,
-                                 boolean isQueryCacheDistance, short radiusThreshold) {
+                                 boolean isQueryCacheDistance, int radiusThreshold) {
         super(tag, serviceId);
         this.entityName = entityName;
         this.isQueryCacheDistance = isQueryCacheDistance;
@@ -233,7 +233,7 @@ public final class QueryCacheTrackOption extends BaseOption {
      */
     public QueryCacheTrackOption(int tag, long serviceId, String entityName,
                                  boolean isQueryCacheDistance,
-                                 short radiusThreshold, long startTime, long endTime) {
+                                 int radiusThreshold, long startTime, long endTime) {
         super(tag, serviceId);
         this.entityName = entityName;
         this.isQueryCacheDistance = isQueryCacheDistance;
@@ -247,8 +247,10 @@ public final class QueryCacheTrackOption extends BaseOption {
         queryCacheTrackRequest.setTag(tag);
         queryCacheTrackRequest.setServiceId(serviceId);
         queryCacheTrackRequest.setEntityName(entityName);
+        queryCacheTrackRequest.setStartTime(startTime);
+        queryCacheTrackRequest.setEndTime(endTime);
         queryCacheTrackRequest.setQueryCacheDistance(isQueryCacheDistance);
-        queryCacheTrackRequest.setRadiusThreshold(radiusThreshold);
+        queryCacheTrackRequest.setRadiusThreshold((short) radiusThreshold);
         return queryCacheTrackRequest;
     }
 

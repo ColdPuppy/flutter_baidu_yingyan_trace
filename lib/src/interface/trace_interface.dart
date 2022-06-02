@@ -35,7 +35,7 @@ abstract class TraceInterface {
   Future<bool> stopGather({TraceCallback? traceCallback});
 
   /// 设置采集周期和打包上传的周期
-  /// 采集周期和上传周期的值域均为[2,300]，且上传周期必须是采集周期的整数倍
+  /// 采集周期和上传周期的值域均为【2,300】，且上传周期必须是采集周期的整数倍
   /// gatherInterval 采集周期，单位：秒
   /// packInterval 打包上传周期，单位：秒
   @required

@@ -1,7 +1,9 @@
 package com.baidu.flutter.trace;
-import com.baidu.flutter.trace.manager.LBSTraceController;
 
 import androidx.annotation.NonNull;
+
+import com.baidu.flutter.trace.manager.LBSTraceController;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 
 /**

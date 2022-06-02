@@ -1,9 +1,9 @@
 package com.baidu.flutter.trace.model.entity;
 
-import java.util.List;
-
 import com.baidu.flutter.trace.model.CoordType;
 import com.baidu.trace.api.entity.PolygonSearchRequest;
+
+import java.util.List;
 
 /**
  * 多边形搜索：根据设定的多边形进行搜索

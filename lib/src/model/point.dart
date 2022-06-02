@@ -15,7 +15,7 @@ class Point {
   /// 定位时间
   int? locTime;
 
-  /// 方向（范围为[0,359]，0度为正北方向，顺时针)
+  /// 方向（范围为【0,359】，0度为正北方向，顺时针)
   int? direction;
 
   /// 速度（单位：km/h）
@@ -36,7 +36,8 @@ class Point {
   });
 
   /// map => Point
-  Point.fromMap(Map map) : assert(map != null) { // ignore: unnecessary_null_comparison
+  Point.fromMap(Map map) : assert(map != null) {
+    // ignore: unnecessary_null_comparison
     location =
         map['location'] == null ? null : LatLng.fromMap(map['location'] as Map);
     if (map['coordType'] != null) {

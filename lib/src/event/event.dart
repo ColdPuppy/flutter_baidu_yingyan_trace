@@ -1,25 +1,4 @@
 import 'package:flutter_baidu_yingyan_trace/flutter_baidu_yingyan_trace.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/around_search_entity_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/bound_search_entity_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/delete_entity_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/district_search_entity_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/keyword_search_entity_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/polygon_search_entity_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/real_time_loc_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/search_entity_list_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/add_monitored_person_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/create_fence_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_fence_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_monitored_person_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_fence_list_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_history_alarm_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_list_monitored_person_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_by_location_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/update_fence_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/push_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/trace/gather_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/trace/trace_result.dart';
 
 class BaseEvent<T> {
   T value;
@@ -106,8 +85,10 @@ class QueryRealTimeLocationEvent extends BaseEvent<RealTimeLocationResult> {
   QueryRealTimeLocationEvent(RealTimeLocationResult value) : super(value);
 }
 
-class DrivingBehaviourAnalysisEvent extends BaseEvent<DrivingBehaviourAnalysisResult> {
-  DrivingBehaviourAnalysisEvent(DrivingBehaviourAnalysisResult value) : super(value);
+class DrivingBehaviourAnalysisEvent
+    extends BaseEvent<DrivingBehaviourAnalysisResult> {
+  DrivingBehaviourAnalysisEvent(DrivingBehaviourAnalysisResult value)
+      : super(value);
 }
 
 class StayPointAnalysisEvent extends BaseEvent<StayPointAnalysisResult> {
@@ -134,7 +115,8 @@ class QueryHistoryTrackEvent extends BaseEvent<QueryHistoryTrackResult> {
   QueryHistoryTrackEvent(QueryHistoryTrackResult value) : super(value);
 }
 
-class QueryTrackLatestPointEvent extends BaseEvent<QueryTrackLatestPointResult> {
+class QueryTrackLatestPointEvent
+    extends BaseEvent<QueryTrackLatestPointResult> {
   QueryTrackLatestPointEvent(QueryTrackLatestPointResult value) : super(value);
 }
 
@@ -162,7 +144,8 @@ class AddMonitoredPersonEvent extends BaseEvent<AddMonitoredPersonResult> {
   AddMonitoredPersonEvent(AddMonitoredPersonResult value) : super(value);
 }
 
-class DeleteMonitoredPersonEvent extends BaseEvent<DeleteMonitoredPersonResult> {
+class DeleteMonitoredPersonEvent
+    extends BaseEvent<DeleteMonitoredPersonResult> {
   DeleteMonitoredPersonEvent(DeleteMonitoredPersonResult value) : super(value);
 }
 
@@ -170,14 +153,19 @@ class QueryHistoryAlarmEvent extends BaseEvent<QueryHistoryAlarmResult> {
   QueryHistoryAlarmEvent(QueryHistoryAlarmResult value) : super(value);
 }
 
-class QueryListMonitoredPersonEvent extends BaseEvent<QueryListMonitoredPersonResult> {
-  QueryListMonitoredPersonEvent(QueryListMonitoredPersonResult value) : super(value);
+class QueryListMonitoredPersonEvent
+    extends BaseEvent<QueryListMonitoredPersonResult> {
+  QueryListMonitoredPersonEvent(QueryListMonitoredPersonResult value)
+      : super(value);
 }
 
 class QueryMonitoredStatusEvent extends BaseEvent<QueryMonitoredStatusResult> {
   QueryMonitoredStatusEvent(QueryMonitoredStatusResult value) : super(value);
 }
 
-class QueryMonitoredStatusByLocationEvent extends BaseEvent<QueryMonitoredStatusByLocationResult> {
-  QueryMonitoredStatusByLocationEvent(QueryMonitoredStatusByLocationResult value) : super(value);
+class QueryMonitoredStatusByLocationEvent
+    extends BaseEvent<QueryMonitoredStatusByLocationResult> {
+  QueryMonitoredStatusByLocationEvent(
+      QueryMonitoredStatusByLocationResult value)
+      : super(value);
 }

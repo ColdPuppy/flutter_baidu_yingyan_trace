@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.track;
 
-import java.util.Map;
-
 import com.baidu.flutter.trace.model.BaseOption;
 import com.baidu.flutter.trace.model.Point;
 import com.baidu.trace.api.track.AddPointRequest;
+
+import java.util.Map;
 
 /**
  * 上传单个轨迹点请求类

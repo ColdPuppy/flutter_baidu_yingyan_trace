@@ -1,9 +1,9 @@
 package com.baidu.flutter.trace.model.fence;
 
-import java.util.List;
-
 import com.baidu.flutter.trace.model.BaseOption;
 import com.baidu.trace.api.fence.MonitoredStatusRequest;
+
+import java.util.List;
 
 /**
  * 查询监控对象状态请求参数

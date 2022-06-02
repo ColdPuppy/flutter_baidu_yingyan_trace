@@ -19,7 +19,7 @@ class StayPointAnalysisOption extends BaseOption {
   int? stayTime;
 
   /// 停留半径，可选。
-  /// 单位：米，取值范围：[1,500]，默认值：20。
+  /// 单位：米，取值范围：【1,500】，默认值：20。
   /// 该字段用于设置停留点判断规则，即若系统判断在半径为stay_radius的圆形范围内停留时间超过stay_time，则被认为是一次停留。
   int? stayRadius;
 
@@ -50,7 +50,8 @@ class StayPointAnalysisOption extends BaseOption {
 
   /// map => StayPointAnalysisOption
   StayPointAnalysisOption.fromMap(Map map)
-      : assert(map != null, // ignore: unnecessary_null_comparison
+      : assert(
+            map != null, // ignore: unnecessary_null_comparison
             'Construct a StayPointAnalysisOption，The parameter map cannot be null !'),
         super.fromMap(map) {
     entityName = map['entityName'];

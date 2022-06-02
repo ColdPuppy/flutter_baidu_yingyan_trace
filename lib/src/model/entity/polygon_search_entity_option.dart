@@ -1,6 +1,4 @@
 import 'package:flutter_baidu_yingyan_trace/flutter_baidu_yingyan_trace.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/coord_type.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/common_search_entity_option.dart';
 
 /// 多边形搜索：根据设定的多边形进行搜索
 class PolygonSearchEntityOption extends CommonSearchOption {

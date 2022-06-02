@@ -1,10 +1,10 @@
 package com.baidu.flutter.trace.model.track;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.baidu.flutter.trace.model.BaseResult;
 import com.baidu.flutter.trace.model.Point;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 查询历史轨迹响应结果

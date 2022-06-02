@@ -21,7 +21,8 @@ class EntityInfo {
   /// 最新的轨迹点信息
   LatestLocation? latestLocation;
 
-  EntityInfo.fromMap(Map map) : assert(map != null) { // ignore: unnecessary_null_comparison
+  EntityInfo.fromMap(Map map) : assert(map != null) {
+    // ignore: unnecessary_null_comparison
     entityName = map['entityName'];
     entityDesc = map['entityDesc'];
     modifyTime = map['modifyTime'];
@@ -73,7 +74,7 @@ class LatestLocation {
   /// 定位时间
   int? locTime;
 
-  /// 方向（范围为[0,359]，0度为正北方向，顺时针）
+  /// 方向（范围为【0,359】，0度为正北方向，顺时针）
   int? direction;
 
   /// 速度（单位：km/h）
@@ -85,7 +86,8 @@ class LatestLocation {
   /// 自定义轨迹属性（track attribute）
   Map<String, String>? columns;
 
-  LatestLocation.fromMap(Map map) : assert(map != null) { // ignore: unnecessary_null_comparison
+  LatestLocation.fromMap(Map map) : assert(map != null) {
+    // ignore: unnecessary_null_comparison
     location = map['location'] == null ? null : LatLng.fromMap(map['location']);
     if (map['coordType'] != null) {
       int value = map['coordType'] as int;
@@ -126,6 +128,4 @@ class LatestLocation {
   String toString() {
     return 'LatestLocation{location: $location, coordType: $coordType, floor: $floor, distance: $distance, objectName: $objectName, radius: $radius, locTime: $locTime, direction: $direction, speed: $speed, height: $height, columns: $columns}';
   }
-
-
 }

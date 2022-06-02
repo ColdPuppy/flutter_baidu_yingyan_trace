@@ -126,7 +126,7 @@ public final class StayPointOption extends BaseOption {
     /**
      * 设置停留半径：
      * <p>
-     * 即系统判断在半径为stayRadius的圆形范围内停留时间超过stayTime，则被认为是一次停留。单位：米，取值范围：[1,500]，默认值：20
+     * 即系统判断在半径为stayRadius的圆形范围内停留时间超过stayTime，则被认为是一次停留。单位：米，取值范围：【1,500】，默认值：20
      *
      * @param stayRadius
      */

@@ -1,6 +1,4 @@
 import 'package:flutter_baidu_yingyan_trace/flutter_baidu_yingyan_trace.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/lat_lng.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/point.dart';
 
 /// 轨迹点信息
 class TrackPoint extends Point {

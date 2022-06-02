@@ -14,6 +14,16 @@
 #import "BTFGatherHandlers.h"
 #import "BTFTrackHandlers.h"
 #import "BTFYingYanLocalHandlers.h"
+#import <BaiduTraceSDK/BaiduTraceSDK.h>
+
+// 如果release状态就不执行NSLog函数
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+# define NSLog(...) {}
+#endif
+
+static NSString *kSDKSetAgreePrivacyApiMethod = @"flutter_baidu_yingyan_trace/sdk/setAgreePrivacy";
 
 @interface BTFYingYanManager ()
 /// channel
@@ -45,6 +55,11 @@
         defaultCenter = [BTFTrackHandlers defalutCenter];
     } else if ([call.method hasPrefix:kLocalPermissionMethods]){
         defaultCenter = [BTFYingYanLocalHandlers defalutCenter];
+    } else if ([kSDKSetAgreePrivacyApiMethod isEqualToString:call.method]) {
+        NSDictionary *dic = (NSDictionary *)call.arguments;
+        BOOL isAgree = [dic[@"isAgree"] boolValue];
+        [BTKPrivacyAuthorization setAgreePrivacy:isAgree];
+        NSLog(@"ios-设置用户是否同意SDK隐私协议：%d", isAgree);
     }
     
     if (defaultCenter) {

@@ -1,11 +1,8 @@
 package com.baidu.flutter.trace.manager;
-import java.util.HashMap;
-import java.util.Map;
+
+import android.util.Log;
 
 import com.baidu.flutter.trace.Constant;
-import com.baidu.flutter.trace.model.TraceOption;
-import com.baidu.flutter.trace.model.entity.AddEntityOption;
-import com.baidu.flutter.trace.model.entity.AddEntityResult;
 import com.baidu.flutter.trace.model.track.AddPointOption;
 import com.baidu.flutter.trace.model.track.AddPointResult;
 import com.baidu.flutter.trace.model.track.AddPointsOption;
@@ -22,7 +19,6 @@ import com.baidu.flutter.trace.model.track.QueryCacheTrackOption;
 import com.baidu.flutter.trace.model.track.QueryCacheTrackResult;
 import com.baidu.flutter.trace.utils.BLog;
 import com.baidu.flutter.trace.utils.DataConvertUtil;
-import com.baidu.trace.api.entity.AddEntityRequest;
 import com.baidu.trace.api.track.AddPointRequest;
 import com.baidu.trace.api.track.AddPointResponse;
 import com.baidu.trace.api.track.AddPointsRequest;
@@ -38,6 +34,8 @@ import com.baidu.trace.api.track.LatestPointResponse;
 import com.baidu.trace.api.track.OnTrackListener;
 import com.baidu.trace.api.track.QueryCacheTrackRequest;
 import com.baidu.trace.api.track.QueryCacheTrackResponse;
+
+import java.util.Map;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -190,6 +188,7 @@ public class TrackManager extends BaseManager {
         }
 
         DistanceRequest distanceRequest = distanceOption.toDistanceRequest();
+        Log.e("DoggieX","1111111111111111111111111111111=>"+distanceRequest.toString());
 
         mLBSTraceController.getLBSTraceClient().queryDistance(distanceRequest,
                 new PluginOnTrackListener());

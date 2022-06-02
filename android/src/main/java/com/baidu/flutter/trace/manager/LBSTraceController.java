@@ -1,15 +1,16 @@
 package com.baidu.flutter.trace.manager;
-import java.util.Map;
+
+import android.content.Context;
+
+import androidx.annotation.NonNull;
 
 import com.baidu.flutter.trace.Constant;
 import com.baidu.flutter.trace.utils.DataConvertUtil;
 import com.baidu.trace.LBSTraceClient;
 import com.baidu.trace.model.LocationMode;
 
-import android.content.Context;
-import android.os.Handler;
-import android.util.Log;
-import androidx.annotation.NonNull;
+import java.util.Map;
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -28,12 +29,13 @@ public class LBSTraceController implements MethodChannel.MethodCallHandler {
     private TrackManager mTrackManager;
 
     private LBSTraceClient mLBSTraceClient;
+    private Context mContext;
 
     public LBSTraceController(FlutterPlugin.FlutterPluginBinding flutterPluginBinding) {
         mMethodChannel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(),
                 "flutter_baidu_yingyan_trace");
         mMethodChannel.setMethodCallHandler(this);
-        mLBSTraceClient = new LBSTraceClient(flutterPluginBinding.getApplicationContext());
+        mContext = flutterPluginBinding.getApplicationContext();
     }
 
     public void release() {
@@ -115,6 +117,17 @@ public class LBSTraceController implements MethodChannel.MethodCallHandler {
         } else if (call.method.equals(Constant.CommonMethodId.STOP_REAL_TIME_LOC)) {
             if (mLBSTraceClient != null) {
                 mLBSTraceClient.stopRealTimeLoc();
+            }
+        } else if (call.method.equals(Constant.TraceSDKMethodId.AGREE_PRIVACY)) {
+            if (mContext != null) {
+                try {
+                    boolean isAgree = call.argument("isAgree");
+                    
+                    LBSTraceClient.setAgreePrivacy(mContext, isAgree);
+                    mLBSTraceClient = new LBSTraceClient(mContext);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         } else  {
             result.notImplemented();

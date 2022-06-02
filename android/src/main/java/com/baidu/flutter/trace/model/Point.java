@@ -28,7 +28,7 @@ public class Point {
     public long locTime;
 
     /**
-     * 方向（范围为[0,359]，0度为正北方向，顺时针）
+     * 方向（范围为【0,359】，0度为正北方向，顺时针）
      */
     public int direction;
 

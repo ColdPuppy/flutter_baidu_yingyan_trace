@@ -1,11 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_baidu_yingyan_trace/flutter_baidu_yingyan_trace.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/around_search_entity_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/bound_search_entity_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/delete_entity_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/district_search_entity_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/keyword_search_entity_option.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/entity/search_entity_list_option.dart';
 
 /// entity终端的相关接口，包括entity的增、删、改、查
 abstract class EntityInterface {

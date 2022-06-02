@@ -1,14 +1,14 @@
 package com.baidu.flutter.trace.model.track;
 
+import com.baidu.flutter.trace.model.BaseOption;
+import com.baidu.flutter.trace.utils.DataConvertUtil;
+import com.baidu.trace.api.track.AddPointsRequest;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-
-import com.baidu.flutter.trace.model.BaseOption;
-import com.baidu.flutter.trace.utils.DataConvertUtil;
-import com.baidu.trace.api.track.AddPointsRequest;
 
 /**
  * 批量添加轨迹点请求类

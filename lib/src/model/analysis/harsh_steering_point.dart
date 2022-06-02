@@ -1,5 +1,5 @@
-import 'package:flutter_baidu_yingyan_trace/src/model/point.dart';
 import 'package:flutter_baidu_yingyan_trace/src/model/analysis/turn_type.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/point.dart';
 
 /// 急转弯点
 class HarshSteeringPoint extends Point {

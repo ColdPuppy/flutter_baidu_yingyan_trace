@@ -1,4 +1,5 @@
 package com.baidu.flutter.trace.model.analysis;
+
 import com.baidu.flutter.trace.model.LatLng;
 import com.baidu.flutter.trace.model.Point;
 

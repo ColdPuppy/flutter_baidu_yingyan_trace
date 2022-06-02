@@ -17,7 +17,7 @@ public final class AroundSearchOption extends CommonOption {
     private LatLng center;
 
     /**
-     * 半径，取值范围[1, 5000]
+     * 半径，取值范围【1, 5000】
      */
     private double radius;
 
@@ -44,7 +44,7 @@ public final class AroundSearchOption extends CommonOption {
     }
 
     /**
-     * 设置半径，取值范围[1, 5000]
+     * 设置半径，取值范围【1, 5000】
      *
      * @param radius
      */

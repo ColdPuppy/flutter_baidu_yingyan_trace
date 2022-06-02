@@ -1,11 +1,11 @@
 package com.baidu.flutter.trace.model.fence;
 
-import java.util.List;
-
 import com.baidu.flutter.trace.model.BaseOption;
 import com.baidu.flutter.trace.model.LatLng;
 import com.baidu.trace.api.fence.MonitoredStatusByLocationRequest;
 import com.baidu.trace.model.CoordType;
+
+import java.util.List;
 
 /**
  * 查询指定位置监控对象的状态

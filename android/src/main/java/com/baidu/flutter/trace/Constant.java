@@ -26,6 +26,13 @@ public class Constant {
                 "flutter_baidu_yingyan_trace/client/";
         public static final String LBS_TRACE_LOCATION =
                 "flutter_baidu_yingyan_trace/location/";
+        public static final String TRACE_SDK_METHOD_ID =
+                "flutter_baidu_yingyan_trace/sdk/";
+    }
+
+    public static class TraceSDKMethodId {
+        public static final String AGREE_PRIVACY =
+                MethodIdPrefix.TRACE_SDK_METHOD_ID + "setAgreePrivacy";
     }
 
     public static class CommonMethodId {

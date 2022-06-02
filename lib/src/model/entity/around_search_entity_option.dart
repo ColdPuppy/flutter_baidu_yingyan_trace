@@ -9,7 +9,7 @@ class AroundSearchEntityOption extends CommonSearchOption {
   /// 圆心经纬度
   late LatLng center;
 
-  /// 半径，取值范围[1, 5000]
+  /// 半径，取值范围【1, 5000】
   late double radius;
 
   /// 圆心坐标类型，默认值为坐标类型百度经纬度(bd09ll)

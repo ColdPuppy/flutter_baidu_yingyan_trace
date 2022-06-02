@@ -104,3 +104,5 @@ export 'src/model/track/track_types.dart';
 
 // 接口
 export 'src/trace_controller.dart';
+// 隐私接口
+export 'src/trace_sdk.dart';

@@ -1,13 +1,13 @@
 import 'package:flutter_baidu_yingyan_trace/src/model/fence/add_monitored_person_result.dart';
 import 'package:flutter_baidu_yingyan_trace/src/model/fence/create_fence_result.dart';
 import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_fence_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/update_fence_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_fence_list_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_history_alarm_result.dart';
-import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_by_location_result.dart';
 import 'package:flutter_baidu_yingyan_trace/src/model/fence/delete_monitored_person_result.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_fence_list_result.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_history_alarm_result.dart';
 import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_list_monitored_person_result.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_by_location_result.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/query_monitored_status_result.dart';
+import 'package:flutter_baidu_yingyan_trace/src/model/fence/update_fence_result.dart';
 
 typedef CreateFenceCallback = void Function(
     CreateFenceResult createFenceResult);
