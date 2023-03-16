@@ -34,7 +34,6 @@ public final class DrivingBehaviorOption extends BaseOption {
      * 其他数值：以设置的数值为阈值，轨迹点速度超过该值则认为是超速。
      * </pre>
      *
-     * @deprecated
      */
     private double speedingThreshold = 0.0;
 
@@ -107,7 +106,6 @@ public final class DrivingBehaviorOption extends BaseOption {
 
     /**
      * @return
-     * @deprecated
      */
     public double getSpeedingThreshold() {
         return speedingThreshold;
@@ -122,7 +120,6 @@ public final class DrivingBehaviorOption extends BaseOption {
      * </pre>
      *
      * @param speedingThreshold
-     * @deprecated
      */
     public void setSpeedingThreshold(int speedingThreshold) {
         this.speedingThreshold = speedingThreshold;
@@ -211,7 +208,6 @@ public final class DrivingBehaviorOption extends BaseOption {
      * @param speedingThreshold 限速值
      * @param processOption     纠偏选项
      * @param coordTypeOutput   返回结果的坐标类型
-     * @deprecated
      */
     public DrivingBehaviorOption(int tag, long serviceId, String entityName, long startTime,
                                  long endTime,

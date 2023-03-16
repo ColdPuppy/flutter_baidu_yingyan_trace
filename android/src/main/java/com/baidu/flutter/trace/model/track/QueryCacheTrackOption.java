@@ -208,7 +208,6 @@ public final class QueryCacheTrackOption extends BaseOption {
      * @param radiusThreshold      定位点去噪精度。查询缓存距离时，对缓存的GPS轨迹点进行去噪，取值=0时，则不过滤；
      *                             当取值大于0的整数时，则过滤掉radius大于设定值的轨迹点。针对GPS点，建议值设置为20
      */
-    @Deprecated
     public QueryCacheTrackOption(int tag, long serviceId, String entityName,
                                  boolean isQueryCacheDistance, int radiusThreshold) {
         super(tag, serviceId);
